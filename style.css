@@ -6,7 +6,7 @@ body {
   padding: 0;
   margin: 0;
   font-size: 120%;
-  background-image: url("https://wallup.net/wp-content/uploads/2019/09/838291-storm-weather-rain-sky-clouds-nature.jpg");
+  background-image: url("https://i.pinimg.com/564x/cb/c2/a8/cbc2a8dcef6077c23ccef4bc995c7dc1.jpg");
   background-size: 100% 100%;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
@@ -226,7 +226,7 @@ h1.temp {
     padding: 0;
     margin: 0;
     font-size: 120%;
-    background-image: url("https://wallup.net/wp-content/uploads/2019/09/838291-storm-weather-rain-sky-clouds-nature.jpg");
+    background-image: url("https://i.pinimg.com/564x/26/40/ef/2640ef1766e1ab49f65401190bb96ddd.jpg");
     background-size: 100% 100%;
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   }
@@ -238,6 +238,10 @@ h1.temp {
     color: white;
     width: calc(100% - 100px);
     letter-spacing: 1px;
+  }
+
+  ::placeholder{
+    font-size: 15px;
   }
 
   .hourly-forecast-container {
@@ -261,7 +265,7 @@ h1.temp {
     justify-content: center;
     padding: 10px; 
     border-radius: 10px; 
-    background-color: #0e0d0d; 
+    background-color: #000000af; 
     color: white; 
     font-size: small; 
   }

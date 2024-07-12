@@ -1,0 +1,307 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-size: 120%;
+  background-image: url("https://wallup.net/wp-content/uploads/2019/09/838291-storm-weather-rain-sky-clouds-nature.jpg");
+  background-size: 100% 100%;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.card {
+  background-color: #000000af;
+  padding: 2em;
+  position: relative;
+  color: white;
+  border: 1px solid #ccc; 
+  border-radius: 30px;
+  width: 100%;
+  max-width: 420px;
+  margin: 1em;
+  top: -50px;
+  margin: auto;
+  box-shadow: 1px 3px 5px rgba(141, 138, 138, 0.1);
+}
+
+.hourly-forecast-container {
+  display: flex; 
+  justify-content: flex-start;
+  bottom: 0;
+  overflow-x: auto; 
+  padding: 10px 0; 
+  background: transparent;
+  max-width: 66vw;
+}
+
+.hourly-forecast-container::-webkit-scrollbar{
+  display: none;
+}
+
+.hourly-forecast-item {
+  flex: 0 0 auto; 
+  padding: 2px; 
+  border: 1px solid #ccc; 
+  border-radius: 10px;
+  margin-right: 10px; 
+  height: 136px;
+  width: 129px;
+  background-color: #000000af;
+  overflow: hidden;
+  font-size: small;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.hourly-forecast-item img{
+  width: 60px;
+  height: 51px;
+}
+
+.hourly-forecast-container p{
+  font-size: 15px;
+  margin-top: 0;
+}
+
+.search { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.separator::before {
+  content: "or";
+  color: var(--light-gery);
+  font-size: 27px;
+  padding: 0 15px;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+input.search-bar {
+  border: none;
+  outline: none;
+  padding: 0.4em 1em;
+  border-radius: 30px;
+  background-color: #00000085;
+  color: white;
+  font-size: 120%;
+  width: calc(100% - 100px);
+  font-family: "Roboto";
+  letter-spacing: 2px;
+}
+
+button {
+  margin: 0.5em;
+  border-radius: 50%;
+  border: none;
+  height: 3em;
+  width: 3em;
+  outline: none;
+  background-color: #00000085;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #615a5a;
+}
+
+button.location-auto-detect {
+  background-color: #00000090;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 45px;
+  width: 87%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 40px 10px 0px; 
+}
+
+button.location-auto-detect:hover {
+  background-color: #5b616096;
+}
+
+.weather {
+  font-weight: bold;
+}
+
+.weather.loading {
+  visibility: hidden;
+  max-height: 20px;
+  position: relative;
+}
+
+.weather.loading::after {
+  position: absolute;
+  top: 0;
+  color: white;
+  visibility: visible;
+  content: "Page Loading...";
+  font-weight: bold;
+  left: 30px;
+}
+
+h1.city {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+h1.temp {
+  margin: 0;
+  margin-bottom: 0.5em;
+  font-size: 0.9em;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  margin-left: -10px;
+  margin-bottom: 0.5em;
+}
+
+.flex .description {
+  text-transform: capitalize;
+  margin-left: 8px;
+}
+
+.autocomplete-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.autocomplete-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.autocomplete-list li:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.humidity {
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.wind{
+  margin-bottom: 0.5em;
+}
+
+@media screen and (max-width: 420px) {
+  .card {
+    border-radius: 35px;
+    max-width: 272px;
+    margin-top: 62px;
+    max-height: 357px;
+    padding-top: 16px;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-size: 120%;
+    background-image: url("https://wallup.net/wp-content/uploads/2019/09/838291-storm-weather-rain-sky-clouds-nature.jpg");
+    background-size: 100% 100%;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  }
+
+  input.search-bar {
+    padding: 0.3em 0.8em;
+    border-radius: 30px;
+    background-color: #00000085;
+    color: white;
+    width: calc(100% - 100px);
+    letter-spacing: 1px;
+  }
+
+  .hourly-forecast-container {
+    width: 100vw; 
+    max-width: none; 
+    margin: 0; 
+    padding: 10px 0; 
+    overflow-x: auto; 
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center; 
+    background: transparent; 
+  }
+
+  .hourly-forecast-item {
+    height: 129px;
+    width: 70px; 
+    margin: 0 5px; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; 
+    border-radius: 10px; 
+    background-color: #0e0d0d; 
+    color: white; 
+    font-size: small; 
+  }
+
+ 
+}
+
+
+
+
+
+/* .weather-news-box {
+  position: absolute;
+  top: 17%;
+  right: 5%;
+  margin: 20px;
+  width: 30%;
+  height: 55%;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.weather-news-box h2 {
+  margin-top: 0;
+}
+
+#news-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#news-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+#news-list li:hover {
+  background-color: #f5f5f5;
+  cursor: pointer;
+} */

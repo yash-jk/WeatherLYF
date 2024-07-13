@@ -111,4 +111,4 @@ searchBar.addEventListener("keyup", (event) => {
   }
 );
 
-weather.fetchWeather("New Delhi"); 
+weather.fetchWeather("new delhi"); 

@@ -231,6 +231,11 @@ h1.temp {
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   }
 
+  button.location-auto-detect{
+     height: 37px;
+     width: 80%;
+  }
+
   input.search-bar {
     padding: 0.3em 0.8em;
     border-radius: 30px;

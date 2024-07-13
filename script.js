@@ -77,7 +77,7 @@ let weather = {
   },
 
   search: function() {
-    this.fetchWeather(searchBar.value);
+    this.fetchWeather(searchBar.value.toLowerCase());
   },
 
 };

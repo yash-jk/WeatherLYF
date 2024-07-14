@@ -44,7 +44,7 @@ let weather = {
   },
 
   fetchForecast: function(city){
-    fetch(`https://api.weatherapi.com/v1/forecast.json?key=f8e85b98c4dd433789c75258243006&q=${city}&days=1&aqi=no&alerts=no`)
+    fetch(`https://api.weatherapi.com/v1/forecast.json?key=${this.apikey}&q=${city}&days=1&aqi=no&alerts=no`)
     .then((response) => response.json())
     .then((data) => this.displayForecast(data))
     .catch((error) => console.log('Error fetching forecast:', error));

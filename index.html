@@ -8,6 +8,26 @@
  <title>WeatherLYF</title>
 </head> 
 <body> 
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <img src="https://icon-library.com/images/weather-app-icon/weather-app-icon-3.jpg" alt="WeatherLYF Logo">
+      <span class="navbar-brand">WeatherLYF</span>
+    </div>
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a href="#" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">Forecast</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">News</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">About</a>
+      </li>
+    </ul>
+  </nav>
   <main>
  <div class="card">
   <div class="search">
@@ -15,7 +35,7 @@
 <ul class="autocomplete-list" id="autocomplete-list"></ul>
    <button><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd"></path></svg></button>
   </div>
- <div class="separator"></div>
+ <div class="separator"></div> 
  <button class="location-auto-detect">Location auto-detect</button>
   <div class="weather loading">
    <h1 class="city">Weather in Lagos</h1>
@@ -41,7 +61,17 @@
     <ul id="alerts"></ul> 
   </div> -->
 </main>
- 
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2024 WeatherLYF. All rights reserved.</p>
+    <ul class="footer-nav">
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Terms of Service</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </div>
+</footer>
+
  <script src="script.js"></script>
 
 </body>

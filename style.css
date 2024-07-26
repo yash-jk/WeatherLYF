@@ -115,6 +115,7 @@ body {
 }
 
 .search {
+  position: relative; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -225,27 +226,6 @@ h1.temp {
   margin-left: 8px;
 }
 
-.autocomplete-list {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  padding: 10px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.autocomplete-list li {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-}
-
-.autocomplete-list li:hover {
-  background-color: #f0f0f0;
-  cursor: pointer;
-}
 
 .humidity {
   font-size: 1.2em;
@@ -305,6 +285,46 @@ h1.temp {
   color: #ccc;
 }
 
+.autocomplete-list {
+  position: absolute;
+  top: calc(100% - 5px); 
+  left: 10px;
+  width: calc(100% - 75px); 
+  max-height: 210px; 
+  overflow-y: auto; 
+  background-color: #000000fb;
+  border: px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000; 
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: auto;
+  overflow: hidden;
+}
+
+.autocomplete-list li {
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.autocomplete-list li:hover {
+  background-color: #5b616096; 
+}
+
+.autocomplete-list li:first-child {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.autocomplete-list li:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+
 @media screen and (max-width: 420px) {
   .card {
     border-radius: 35px;
@@ -344,7 +364,7 @@ h1.temp {
     background-size: 100% 100%;
     overflow: hidden;
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-      "Lucida Sans", Arial, sans-serif;
+      "Lucida Sans", Arial, sans-serif; 
   }
 
   input.search-bar {
@@ -353,7 +373,7 @@ h1.temp {
     background-color: #00000085;
     color: white;
     width: calc(100% - 100px);
-    letter-spacing: 1px;
+    letter-spacing: 1px; 
   }
 
   ::placeholder {

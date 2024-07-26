@@ -12,7 +12,7 @@ let feelslike_cEl = document.querySelector(".feelslike_c");
 let autocompleteList = document.getElementById("autocomplete-list");
 let alertsEl = document.getElementById("alerts");
 
-let weather = { 
+let weather = {
   apikey: "f8e85b98c4dd433789c75258243006",
   fetchWeather: function(city) {
     fetch(`https://api.weatherapi.com/v1/current.json?key=${this.apikey}&q=${city}&aqi=no`)
@@ -27,10 +27,10 @@ let weather = {
     const name = data.location.name;
     const icon = data.current.condition.icon;
     const text = data.current.condition.text;
-    const temp_c = data.current.temp_c;
-    const humidity = data.current.humidity;
+    const temp_c = data.current.temp_c; 
+    const humidity = data.current.humidity; 
     const wind_kph = data.current.wind_kph;
-    const feelslike_c = data.current.feelslike_c;
+    const feelslike_c = data.current.feelslike_c; 
 
     cityEl.innerText = `Weather in ${name}`;
     iconEl.src = `https:${icon}`;
@@ -72,20 +72,36 @@ let weather = {
         </div>
       `;
       hourlyForecastEl.appendChild(hourlyForecastDiv);
-  
     });
   },
 
   search: function() {
-    const searchValue = searchBar.value.toLowerCase();
-    console.log(searchValue);
+    const searchValue = searchBar.value.trim().toLowerCase();
     this.fetchWeather(searchValue);
   },
 
+  autocomplete: function(query) {
+    fetch(`https://api.weatherapi.com/v1/search.json?key=${this.apikey}&q=${query}`)
+      .then((response) => response.json())
+      .then((data) => {
+        autocompleteList.innerHTML = ''; 
+        data.forEach((result) => {
+          const listItem = document.createElement('li');
+          listItem.textContent = result.name;
+          listItem.addEventListener('click', () => {
+            searchBar.value = result.name;
+            autocompleteList.innerHTML = ''; 
+            this.search();
+          });
+          autocompleteList.appendChild(listItem);
+        });
+      })
+      .catch((error) => console.error('Error fetching autocomplete:', error));
+  }
 };
 
+
 searchEl.addEventListener("click", () => {
-  console.log("Clicked!");
   weather.search();
 });
 
@@ -97,6 +113,19 @@ locationBtn.addEventListener("click", () => {
   }
 });
 
+searchBar.addEventListener("keyup", (event) => {
+  const query = event.target.value.trim().toLowerCase();
+  if (query.length >= 3) {
+    weather.autocomplete(query);
+  } else {
+    autocompleteList.innerHTML = ''; 
+  }
+
+  if (event.key === "Enter") {
+    weather.search();
+  }
+});
+
 function onSuccess(position) {
   const { latitude, longitude } = position.coords;
   weather.fetchWeather(`${latitude},${longitude}`);
@@ -105,12 +134,5 @@ function onSuccess(position) {
 function onError(error) {
   console.error(`Error getting location: ${error.message}`);
 }
-
-searchBar.addEventListener("keyup", (event) => {
-  if (event.key === "Enter") {
-    weather.search();
-  } 
-  }
-);
 
 weather.fetchWeather("new delhi");
